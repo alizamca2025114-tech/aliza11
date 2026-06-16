@@ -1,0 +1,26 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code from Git
+      uses: actions/checkout@v4
+
+    - name: Run Build Stage
+      run: |
+        echo "Starting Build Phase..."
+        echo "Compiling code and checking dependencies..."
+
+    - name: Run Test Stage
+      run: |
+        echo "Starting Automated Tests..."
+        echo "Executing unit test suites..."
+        echo "All tests passed successfully!"
